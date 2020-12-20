@@ -20,11 +20,11 @@
 
 
 #####
-nj=8  # number of jobs to run
+nj=50  # number of jobs to run
 
 stage=1
 
-swbd="/share/data/speech/Datasets/switchboard/"  # local switchboard location
+swbd="/export/corpora3/LDC/LDC97S62"  # local switchboard location
 
 min_word_length=6  # minimum word length for written words
 min_audio_duration=50  # minimum audio duration for spoken words
@@ -120,7 +120,7 @@ if [ $stage -le 4 ]; then
         
         mkdir -p $queries/$partition
         
-        extract-rows $queries/$partition/intervals "scp:$scp_file" "ark,scp:$queries/$partition/mfcc.ark,$queries/$partition/mfcc.scp" &
+        /export/c06/aarora8/kaldi/src/featbin/extract-rows $queries/$partition/intervals "scp:$scp_file" "ark,scp:$queries/$partition/mfcc.ark,$queries/$partition/mfcc.scp" &
     done
     wait
 fi

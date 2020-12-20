@@ -1,3 +1,4 @@
+export KALDI_ROOT=/export/c06/aarora8/kaldi
 export PATH=\
 $PWD/utils/:\
 $KALDI_ROOT/src/bin:\
